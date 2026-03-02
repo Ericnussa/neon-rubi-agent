@@ -13,6 +13,19 @@
 
 **Fastest path:** click Railway button → set env vars → deploy.
 
+### ✅ One Link + 3 Fields
+
+**Single deploy link:**
+https://railway.com/deploy?repo=https://github.com/Ericnussa/neon-rubi-agent
+
+Set only:
+- `AUTH_SECRET`
+- `ADMIN_PASSWORD`
+- `OPENAI_API_KEY` or `ANTHROPIC_API_KEY`
+
+See `DEPLOY_LINK.md` for the exact copy-paste flow.
+
+
 
 A personal **assistant-agent** starter inspired by Rubi-style operation:
 

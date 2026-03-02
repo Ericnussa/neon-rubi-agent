@@ -46,6 +46,11 @@ class ThreadMessageRequest(BaseModel):
     content: str
 
 
+@app.get("/health")
+def health():
+    return {"ok": True, "service": "neon-rubi-agent"}
+
+
 @app.get("/", response_class=HTMLResponse)
 def index() -> str:
     return """
