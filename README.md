@@ -4,6 +4,16 @@
 [![Release](https://img.shields.io/github/v/release/Ericnussa/neon-rubi-agent)](https://github.com/Ericnussa/neon-rubi-agent/releases)
 [![Deploy Workflow](https://img.shields.io/badge/deploy-manual-blue)](https://github.com/Ericnussa/neon-rubi-agent/actions/workflows/deploy.yml)
 
+
+## 🚀 DEPLOY NOW
+
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy?repo=https://github.com/Ericnussa/neon-rubi-agent)
+[![Open Deploy Workflow](https://img.shields.io/badge/GitHub%20Actions-Deploy%20GHCR-blue?logo=githubactions)](https://github.com/Ericnussa/neon-rubi-agent/actions/workflows/deploy.yml)
+[![Open Releases](https://img.shields.io/badge/GitHub-Releases-181717?logo=github)](https://github.com/Ericnussa/neon-rubi-agent/releases)
+
+**Fastest path:** click Railway button → set env vars → deploy.
+
+
 A personal **assistant-agent** starter inspired by Rubi-style operation:
 
 - Persona-driven behavior
