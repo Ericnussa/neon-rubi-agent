@@ -166,3 +166,14 @@ Fails if insecure defaults are still present.
 - **Run Deploy Workflow:** https://github.com/Ericnussa/neon-rubi-agent/actions/workflows/deploy.yml
 - **Releases:** https://github.com/Ericnussa/neon-rubi-agent/releases
 - **Latest Release (v0.1.0):** https://github.com/Ericnussa/neon-rubi-agent/releases/tag/v0.1.0
+
+
+## One-Click Cloud Deploy
+
+- **Railway:** [![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy?repo=https://github.com/Ericnussa/neon-rubi-agent)
+- **Render:** Use Blueprint from this repo (`render.yaml`) in Render dashboard
+- **Fly.io:** `fly launch` in repo (uses `fly.toml`)
+
+### Deploy Notes
+- Set required secrets/env vars in your platform dashboard (`AUTH_SECRET`, `ADMIN_USERNAME`, `ADMIN_PASSWORD`, and at least one LLM API key).
+- For public deployments, always rotate default credentials.
