@@ -118,3 +118,13 @@ scripts/
 - `GET /threads` (viewer+) list threads
 - `POST /threads/{id}/messages` (editor+) add message
 - `GET /threads/{id}/messages` (viewer+) read messages
+
+
+## Full Web UI
+
+The `/` route now ships a complete built-in UI with:
+- JWT login/logout
+- Role-aware admin panel (create users)
+- Thread list + thread creation
+- Message timeline
+- Composer that writes both user + assistant messages to thread history
