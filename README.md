@@ -103,3 +103,18 @@ scripts/
 - Retrieval from long-term memory (semantic search)
 - Tests + GitHub Actions CI
 - Docker deployment
+
+
+## Roles & Auth
+
+- Roles: `admin`, `editor`, `viewer`
+- `POST /auth/login` returns JWT with role claim
+- `POST /admin/users` (admin only) creates users
+- `GET /admin/memories-jwt` requires JWT (viewer+)
+
+## Threaded Chat History API
+
+- `POST /threads` (editor+) create thread
+- `GET /threads` (viewer+) list threads
+- `POST /threads/{id}/messages` (editor+) add message
+- `GET /threads/{id}/messages` (viewer+) read messages

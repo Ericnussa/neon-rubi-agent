@@ -32,7 +32,31 @@ def init_db(db_path: Path) -> None:
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             username TEXT UNIQUE NOT NULL,
             password_hash TEXT NOT NULL,
-            role TEXT NOT NULL DEFAULT 'admin'
+            role TEXT NOT NULL DEFAULT 'viewer'
+        )
+        """
+    )
+
+    cur.execute(
+        """
+        CREATE TABLE IF NOT EXISTS threads (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            created_at TEXT NOT NULL,
+            title TEXT NOT NULL,
+            owner_username TEXT
+        )
+        """
+    )
+
+    cur.execute(
+        """
+        CREATE TABLE IF NOT EXISTS messages (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            thread_id INTEGER NOT NULL,
+            created_at TEXT NOT NULL,
+            role TEXT NOT NULL,
+            content TEXT NOT NULL,
+            FOREIGN KEY(thread_id) REFERENCES threads(id)
         )
         """
     )
