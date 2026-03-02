@@ -83,6 +83,12 @@ scripts/
 .env.example
 ```
 
+## Auth
+
+- Login endpoint: `POST /auth/login` (username/password)
+- JWT-protected admin endpoint: `GET /admin/memories-jwt`
+- Legacy admin token endpoint: `GET /admin/memories` with `x-admin-token`
+
 ## Notes
 
 - If no provider key is set, the agent gracefully falls back to basic local responses.

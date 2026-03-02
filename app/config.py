@@ -19,3 +19,7 @@ class Settings:
 
     admin_token: str | None = os.getenv("ADMIN_TOKEN")
     db_path: Path = Path(os.getenv("DB_PATH", "data/neon_rubi.db"))
+
+    auth_secret: str = os.getenv("AUTH_SECRET", "change-this-secret")
+    admin_username: str = os.getenv("ADMIN_USERNAME", "admin")
+    admin_password: str = os.getenv("ADMIN_PASSWORD", "change-me")
