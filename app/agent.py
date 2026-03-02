@@ -1,6 +1,7 @@
 from pathlib import Path
 from app.memory import MemoryStore
 from app.policy import ActionPolicy
+from app.providers import LLMClient
 
 
 class AssistantAgent:
@@ -8,6 +9,12 @@ class AssistantAgent:
         self.root = root or Path.cwd()
         self.memory = MemoryStore(self.root / "memory")
         self.policy = ActionPolicy()
+        self.llm = LLMClient()
+
+    def _system_prompt(self) -> str:
+        soul = (self.root / "config" / "SOUL.md").read_text(encoding="utf-8")
+        user = (self.root / "config" / "USER.md").read_text(encoding="utf-8")
+        return f"{soul}\n\n{user}\n\nAlways be helpful and concise."
 
     def respond(self, message: str) -> str:
         lowered = message.lower()
@@ -26,4 +33,11 @@ class AssistantAgent:
             return self.policy.require_confirmation("external_action")
 
         self.memory.append_daily(f"User said: {message}")
+
+        if self.llm.is_available():
+            try:
+                return self.llm.chat(self._system_prompt(), message)
+            except Exception:
+                pass
+
         return "I’m on it. Want me to save this as a tracked task too?"

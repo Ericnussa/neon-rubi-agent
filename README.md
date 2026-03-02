@@ -1,22 +1,23 @@
 # Neon Rubi Agent
 
-A personal **assistant-agent MVP** inspired by Rubi-style operation:
+A personal **assistant-agent** starter inspired by Rubi-style operation:
 
 - Persona-driven behavior
 - Durable memory (daily + long-term)
-- Tool abstraction layer
-- Heartbeat loop for proactive checks
-- Safe-by-default action policy
+- LLM provider adapters (OpenAI + Anthropic)
+- Channel adapters (CLI + Telegram + Discord)
+- Lightweight web UI (FastAPI)
+- Heartbeat + safety policy primitives
 
-## MVP Scope
+## MVP+ Scope (implemented)
 
-This MVP provides:
-
-1. **Core Agent Loop** (`app/agent.py`)
-2. **Persona + User Profile** (`config/SOUL.md`, `config/USER.md`)
-3. **Memory System** (`memory/` + `app/memory.py`)
-4. **Heartbeat Task Runner** (`app/heartbeat.py`)
-5. **Simple CLI Interface** (`app/main.py`)
+- **Core Agent Loop** (`app/agent.py`)
+- **Persona + User Profile** (`config/SOUL.md`, `config/USER.md`)
+- **Memory System** (`memory/` + `app/memory.py`)
+- **LLM Layer** (`app/providers.py`)
+- **Channel Connectors** (`app/channels.py`)
+- **Web Chat UI** (`app/web.py`)
+- **Action Confirmation Policy** (`app/policy.py`)
 
 ## Quick Start
 
@@ -24,7 +25,34 @@ This MVP provides:
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+cp .env.example .env  # then set API keys/tokens
+```
+
+### 1) CLI mode
+
+```bash
 python -m app.main
+```
+
+### 2) Telegram bot mode
+
+```bash
+export TELEGRAM_BOT_TOKEN=your_token
+python -m app.main --mode telegram
+```
+
+### 3) Discord bot mode
+
+```bash
+export DISCORD_BOT_TOKEN=your_token
+python -m app.main --mode discord
+```
+
+### 4) Web UI mode
+
+```bash
+./scripts/run-web.sh
+# open http://127.0.0.1:8000
 ```
 
 ## Project Layout
@@ -34,8 +62,11 @@ app/
   main.py
   agent.py
   memory.py
+  providers.py
+  channels.py
   heartbeat.py
   policy.py
+  web.py
 config/
   SOUL.md
   USER.md
@@ -44,15 +75,22 @@ memory/
   daily-template.md
 scripts/
   bootstrap.sh
+  run-web.sh
+  run-telegram.sh
+  run-discord.sh
+.env.example
 ```
 
-## Next Steps
+## Notes
 
-- Add model provider adapters (OpenAI/Anthropic/local)
-- Add messaging channel adapters (Telegram/Discord/Web)
-- Add scheduled task runner (cron + job queue)
-- Add plugin tool system
-- Add tests + CI workflow
+- If no provider key is set, the agent gracefully falls back to basic local responses.
+- External/public actions are blocked behind confirmation messaging by default.
+- Memory writes are UTC timestamped markdown logs for easy auditing.
 
----
-Built as a clean, hackable foundation for a self-hosted personal assistant agent.
+## Next Suggested Upgrades
+
+- Task queue + scheduler for autonomous jobs
+- Tool/plugin registry with permission scopes
+- Retrieval from long-term memory (semantic search)
+- Tests + GitHub Actions CI
+- Docker deployment
