@@ -128,3 +128,30 @@ The `/` route now ships a complete built-in UI with:
 - Thread list + thread creation
 - Message timeline
 - Composer that writes both user + assistant messages to thread history
+
+
+## One-Command Install
+
+```bash
+./scripts/install.sh
+```
+
+Installer flow:
+- creates `.venv`
+- installs dependencies
+- copies `.env.example` to `.env` (if needed)
+- runs interactive setup wizard
+- auto-generates secure defaults for auth secrets/tokens
+
+## Secure Config Check
+
+```bash
+python scripts/security_check.py
+```
+
+Fails if insecure defaults are still present.
+
+## Packaged Docs
+
+- `docs/QUICKSTART.md` for non-developers
+- `DEPLOY.md` for server deployment
