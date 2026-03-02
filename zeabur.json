@@ -1,0 +1,17 @@
+{
+  "$schema": "https://schema.zeabur.com/config.json",
+  "name": "neon-rubi-agent",
+  "services": [
+    {
+      "name": "web",
+      "template": "DOCKERFILE",
+      "source": {
+        "dockerfile": "Dockerfile"
+      },
+      "env": {
+        "HOST": "0.0.0.0",
+        "PORT": "8000"
+      }
+    }
+  ]
+}

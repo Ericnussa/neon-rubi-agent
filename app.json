@@ -1,0 +1,30 @@
+{
+  "name": "neon-rubi-agent",
+  "description": "Personal assistant agent with auth, threads, memory, and web UI",
+  "repository": "https://github.com/Ericnussa/neon-rubi-agent",
+  "keywords": ["python", "fastapi", "assistant", "agent"],
+  "env": {
+    "AUTH_SECRET": {
+      "description": "JWT signing secret",
+      "generator": "secret"
+    },
+    "ADMIN_USERNAME": {
+      "description": "Initial admin username",
+      "value": "admin"
+    },
+    "ADMIN_PASSWORD": {
+      "description": "Initial admin password",
+      "generator": "secret"
+    },
+    "ADMIN_TOKEN": {
+      "description": "Legacy admin token endpoint",
+      "generator": "secret"
+    },
+    "OPENAI_API_KEY": {
+      "description": "Optional OpenAI key"
+    },
+    "ANTHROPIC_API_KEY": {
+      "description": "Optional Anthropic key"
+    }
+  }
+}

@@ -174,6 +174,11 @@ Fails if insecure defaults are still present.
 - **Render:** Use Blueprint from this repo (`render.yaml`) in Render dashboard
 - **Fly.io:** `fly launch` in repo (uses `fly.toml`)
 
+
+- **Heroku:** one-click app manifest via `app.json` + `Procfile`
+- **Koyeb:** config scaffold via `koyeb.yaml`
+- **Zeabur:** config scaffold via `zeabur.json`
+
 ### Deploy Notes
 - Set required secrets/env vars in your platform dashboard (`AUTH_SECRET`, `ADMIN_USERNAME`, `ADMIN_PASSWORD`, and at least one LLM API key).
 - For public deployments, always rotate default credentials.
