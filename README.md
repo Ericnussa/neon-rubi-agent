@@ -1,5 +1,9 @@
 # Neon Rubi Agent
 
+[![CI](https://github.com/Ericnussa/neon-rubi-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/Ericnussa/neon-rubi-agent/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/Ericnussa/neon-rubi-agent)](https://github.com/Ericnussa/neon-rubi-agent/releases)
+[![Deploy Workflow](https://img.shields.io/badge/deploy-manual-blue)](https://github.com/Ericnussa/neon-rubi-agent/actions/workflows/deploy.yml)
+
 A personal **assistant-agent** starter inspired by Rubi-style operation:
 
 - Persona-driven behavior
@@ -155,3 +159,10 @@ Fails if insecure defaults are still present.
 
 - `docs/QUICKSTART.md` for non-developers
 - `DEPLOY.md` for server deployment
+
+
+## One-Click Actions
+
+- **Run Deploy Workflow:** https://github.com/Ericnussa/neon-rubi-agent/actions/workflows/deploy.yml
+- **Releases:** https://github.com/Ericnussa/neon-rubi-agent/releases
+- **Latest Release (v0.1.0):** https://github.com/Ericnussa/neon-rubi-agent/releases/tag/v0.1.0
