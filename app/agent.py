@@ -2,14 +2,16 @@ from pathlib import Path
 from app.memory import MemoryStore
 from app.policy import ActionPolicy
 from app.providers import LLMClient
+from app.config import Settings
 
 
 class AssistantAgent:
     def __init__(self, root: Path | None = None):
         self.root = root or Path.cwd()
-        self.memory = MemoryStore(self.root / "memory")
+        self.settings = Settings()
+        self.memory = MemoryStore(self.root / "memory", db_path=self.root / self.settings.db_path)
         self.policy = ActionPolicy()
-        self.llm = LLMClient()
+        self.llm = LLMClient(self.settings)
 
     def _system_prompt(self) -> str:
         soul = (self.root / "config" / "SOUL.md").read_text(encoding="utf-8")

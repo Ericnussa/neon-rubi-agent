@@ -1,5 +1,6 @@
 import os
 from dataclasses import dataclass
+from pathlib import Path
 
 
 @dataclass
@@ -15,3 +16,6 @@ class Settings:
 
     host: str = os.getenv("HOST", "127.0.0.1")
     port: int = int(os.getenv("PORT", "8000"))
+
+    admin_token: str | None = os.getenv("ADMIN_TOKEN")
+    db_path: Path = Path(os.getenv("DB_PATH", "data/neon_rubi.db"))

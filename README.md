@@ -7,6 +7,8 @@ A personal **assistant-agent** starter inspired by Rubi-style operation:
 - LLM provider adapters (OpenAI + Anthropic)
 - Channel adapters (CLI + Telegram + Discord)
 - Lightweight web UI (FastAPI)
+- Admin-token protected dashboard endpoint
+- SQLite-backed persistent memory
 - Heartbeat + safety policy primitives
 
 ## MVP+ Scope (implemented)
@@ -85,7 +87,8 @@ scripts/
 
 - If no provider key is set, the agent gracefully falls back to basic local responses.
 - External/public actions are blocked behind confirmation messaging by default.
-- Memory writes are UTC timestamped markdown logs for easy auditing.
+- Memory writes are UTC timestamped markdown logs and mirrored to SQLite (`data/neon_rubi.db`).
+- `/admin/memories` requires `x-admin-token` header matching `ADMIN_TOKEN`.
 
 ## Next Suggested Upgrades
 
