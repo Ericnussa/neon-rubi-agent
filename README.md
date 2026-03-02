@@ -5,26 +5,17 @@
 [![Deploy Workflow](https://img.shields.io/badge/deploy-manual-blue)](https://github.com/Ericnussa/neon-rubi-agent/actions/workflows/deploy.yml)
 
 
-## 🚀 DEPLOY NOW
+## 🚀 DEPLOY NOW (VPS)
 
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy?repo=https://github.com/Ericnussa/neon-rubi-agent)
 [![Open Deploy Workflow](https://img.shields.io/badge/GitHub%20Actions-Deploy%20GHCR-blue?logo=githubactions)](https://github.com/Ericnussa/neon-rubi-agent/actions/workflows/deploy.yml)
 [![Open Releases](https://img.shields.io/badge/GitHub-Releases-181717?logo=github)](https://github.com/Ericnussa/neon-rubi-agent/releases)
 
-**Fastest path:** click Railway button → set env vars → deploy.
-
-### ✅ One Link + 3 Fields
-
-**Single deploy link:**
-https://railway.com/deploy?repo=https://github.com/Ericnussa/neon-rubi-agent
-
-Set only:
-- `AUTH_SECRET`
-- `ADMIN_PASSWORD`
-- `OPENAI_API_KEY` or `ANTHROPIC_API_KEY`
+**Fastest VPS path:**
+```bash
+git clone https://github.com/Ericnussa/neon-rubi-agent.git && cd neon-rubi-agent && cp .env.example .env && nano .env && docker compose up -d --build
+```
 
 See `DEPLOY_LINK.md` for the exact copy-paste flow.
-
 
 
 A personal **assistant-agent** starter inspired by Rubi-style operation:
@@ -190,17 +181,6 @@ Fails if insecure defaults are still present.
 - **Releases:** https://github.com/Ericnussa/neon-rubi-agent/releases
 - **Latest Release (v0.1.0):** https://github.com/Ericnussa/neon-rubi-agent/releases/tag/v0.1.0
 
-
-## One-Click Cloud Deploy
-
-- **Railway:** [![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy?repo=https://github.com/Ericnussa/neon-rubi-agent)
-- **Render:** Use Blueprint from this repo (`render.yaml`) in Render dashboard
-- **Fly.io:** `fly launch` in repo (uses `fly.toml`)
-
-
-- **Heroku:** one-click app manifest via `app.json` + `Procfile`
-- **Koyeb:** config scaffold via `koyeb.yaml`
-- **Zeabur:** config scaffold via `zeabur.json`
 
 ### Deploy Notes
 - Set required secrets/env vars in your platform dashboard (`AUTH_SECRET`, `ADMIN_USERNAME`, `ADMIN_PASSWORD`, and at least one LLM API key).

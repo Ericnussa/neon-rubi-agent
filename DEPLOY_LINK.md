@@ -1,18 +1,15 @@
-# One-Link Deploy (Fastest)
+# VPS One-Command Deploy (Docker)
 
-## Click this:
+Run this on your VPS:
 
-## https://railway.com/deploy?repo=https://github.com/Ericnussa/neon-rubi-agent
+```bash
+git clone https://github.com/Ericnussa/neon-rubi-agent.git && cd neon-rubi-agent && cp .env.example .env && nano .env && docker compose up -d --build
+```
 
-Then set only these 3 values in Railway Variables:
+Required `.env` values:
+- `AUTH_SECRET`
+- `ADMIN_PASSWORD`
+- `OPENAI_API_KEY` or `ANTHROPIC_API_KEY`
 
-1. `AUTH_SECRET` = any long random string
-2. `ADMIN_PASSWORD` = your admin password
-3. `OPENAI_API_KEY` **or** `ANTHROPIC_API_KEY`
-
-Use default for:
-- `ADMIN_USERNAME=admin`
-
-After deploy:
-- Open your Railway app URL
-- Login with `admin` + your `ADMIN_PASSWORD`
+Then open:
+- `http://YOUR_VPS_IP:8000`

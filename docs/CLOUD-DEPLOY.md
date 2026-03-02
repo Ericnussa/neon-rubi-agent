@@ -1,15 +1,5 @@
 # Cloud Deploy Options
 
-## Railway (One Click)
-
-1. Click: https://railway.com/deploy?repo=https://github.com/Ericnussa/neon-rubi-agent
-2. Add env vars:
-   - `AUTH_SECRET`
-   - `ADMIN_USERNAME`
-   - `ADMIN_PASSWORD`
-   - `OPENAI_API_KEY` or `ANTHROPIC_API_KEY`
-3. Deploy and open generated URL.
-
 ## Render (Blueprint)
 
 1. In Render: New + > Blueprint
